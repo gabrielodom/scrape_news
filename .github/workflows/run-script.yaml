@@ -2,7 +2,7 @@ name: run-script.yaml
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   run-script:
@@ -20,5 +20,5 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
 
       # Run your script
-      - name: Run analysis.R
-        run: Rscript analysis.R
+      - name: Run scrape_news.R
+        run: Rscript scrape_news.R

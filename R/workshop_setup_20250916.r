@@ -12,3 +12,5 @@ usethis::use_github_action()
 # have this, I'm going to commit and push to GitHub to see what happens.
 
 # I committed my changes and pushed, but nothing happened in the Actions tab.
+# Ah, maybe because the .yaml file was looking at the "master" branch instead of
+# the "main" branch?
