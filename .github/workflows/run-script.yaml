@@ -21,4 +21,4 @@ jobs:
 
       # Run your script
       - name: Run scrape_news.R
-        run: Rscript scrape_news.R
+        run: Rscript R/scrape_news.R
