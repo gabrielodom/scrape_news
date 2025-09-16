@@ -15,4 +15,4 @@ req <- request("https:///newsapi.org/v2/everything") %>%
     # notes for how to set this are in the diamonds/ repo
     apiKey = Sys.getenv("NEWS_API_KEY")
   )
-req_perform(req, path = paste0("data_news/", date, ".json"))
+req_perform(req, path = paste0("./data_news/", date, ".json"))

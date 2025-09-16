@@ -23,7 +23,22 @@ usethis::use_github_action()
 # Error: Process completed with exit code 2.
 # I think this is because the script is in R/. Let's fix that.
 
+
 # Second error:
+# Error in `req_perform()`:
+#   ! Failed to perform HTTP request.
+# Caused by error in `curl::curl_fetch_disk()`:
+#   ! Failed to open file data_news/2025-09-15.json.
+# Backtrace:
+#   ▆
+# 1. └─httr2::req_perform(req, path = paste0("data_news/", date, ".json"))
+# 2.   └─httr2:::handle_resp(req, resp, error_call = error_call)
+# 3.     └─rlang::cnd_signal(resp)
+# Execution halted
+# Error: Process completed with exit code 1.
+# Possible fix: I'm going to pre-append "./" to "data_news/"
+
+# Third error:
 
 # So we need to make sure to point to the API key in a place that GitHub can
 # find it. First, we need to set the API key in GitHub; so we go to settings for
