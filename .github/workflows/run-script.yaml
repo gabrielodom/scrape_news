@@ -20,5 +20,5 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
 
       # Run your script
-      - name: Run scrape_news.R
-        run: Rscript ./R/scrape_news.R
+      - name: Run scrape_news.r
+        run: Rscript ./R/scrape_news.r
