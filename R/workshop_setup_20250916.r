@@ -18,6 +18,7 @@ usethis::use_github_action()
 # errors, but something is happening.
 
 
+# Now I'm going to add an option to run this every Wednesday at 1:13AM
 # First error:
 # Run Rscript scrape_news.R
 # Fatal error: cannot open file 'scrape_news.R': No such file or directory
@@ -81,4 +82,28 @@ usethis::use_github_action()
 # the action should make a commit to the repo. Here is an action to do that:
 # - uses: stefanzweifel/git-auto-commit-action@v5
 # Let's try it out
+
+
+# Fourth Error
+# INPUT_PUSH_OPTIONS:
+#   remote: Permission to gabrielodom/scrape_news.git denied to github-actions[bot].
+# fatal: unable to access 'https://github.com/gabrielodom/scrape_news/': The requested URL returned error: 403
+# Error: Error: Invalid status code: 128
+# at ChildProcess.<anonymous> (/home/runner/work/_actions/stefanzweifel/git-auto-commit-action/v5/index.js:17:19)
+# at ChildProcess.emit (node:events:524:28)
+# at maybeClose (node:internal/child_process:1104:16)
+# at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+#   code: 128
+# }
+# Error: Error: Invalid status code: 128
+# at ChildProcess.<anonymous> (/home/runner/work/_actions/stefanzweifel/git-auto-commit-action/v5/index.js:17:19)
+# at ChildProcess.emit (node:events:524:28)
+# at maybeClose (node:internal/child_process:1104:16)
+# at ChildProcess._handle.onexit (node:internal/child_process:304:5)
+
+# Stackoverflow tells me: "You have to configure your repository - Settings ->
+# Action -> General -> Workflow permissions; choose the radio button for "Read
+# and write permissions", then Save. Now go back to Actions and Re-Run Jobs.
+# Now, at the completion of the Action, I can "pull" the changes from GitHub to
+# my local machine.
 
