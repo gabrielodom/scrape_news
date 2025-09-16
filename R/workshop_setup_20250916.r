@@ -36,7 +36,11 @@ usethis::use_github_action()
 # 3.     └─rlang::cnd_signal(resp)
 # Execution halted
 # Error: Process completed with exit code 1.
-# Possible fix: I'm going to pre-append "./" to "data_news/"
+# Possible fix: I'm going to pre-append "./" to "data_news/".
+# Ok, that didn't work. So, Git automatically ignores empty directories. Right
+# now, the data_news/ directory doesn't exist on GitHub. I'm going to put an
+# empty text file in there to make sure that GitHub can find the subdirectory.
+
 
 # Third error:
 
