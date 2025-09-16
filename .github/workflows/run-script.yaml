@@ -1,4 +1,4 @@
-name: run-r-script.yaml
+name: run-script.yaml
 
 on:
   push:
