@@ -17,6 +17,7 @@ usethis::use_github_action()
 # YAY! The GitHub Action is actually working. Not sure if it will run without
 # errors, but something is happening.
 
+
 # First error:
 # Run Rscript scrape_news.R
 # Fatal error: cannot open file 'scrape_news.R': No such file or directory
@@ -40,10 +41,27 @@ usethis::use_github_action()
 # Ok, that didn't work. So, Git automatically ignores empty directories. Right
 # now, the data_news/ directory doesn't exist on GitHub. I'm going to put an
 # empty text file in there to make sure that GitHub can find the subdirectory.
+# Finally!!!
 
 
 # Third error:
-
+# Error in `req_perform()`:
+#   ! HTTP 401 Unauthorized.
+# Backtrace:
+#   ▆
+# 1. └─httr2::req_perform(req, path = paste0("./data_news/", date, ".json"))
+# 2.   └─httr2:::handle_resp(req, resp, error_call = error_call)
+# 3.     └─httr2:::resp_failure_cnd(req, resp, error_call = error_call)
+# 4.       ├─rlang::catch_cnd(...)
+# 5.       │ ├─rlang::eval_bare(...)
+# 6.       │ ├─base::tryCatch(...)
+# 7.       │ │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+# 8.       │ │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+# 9.       │ │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+# 10.       │ └─base::force(expr)
+# 11.       └─rlang::abort(...)
+# Execution halted
+# Error: Process completed with exit code 1.
 # So we need to make sure to point to the API key in a place that GitHub can
 # find it. First, we need to set the API key in GitHub; so we go to settings for
 # the repository, then scroll down to Secrets and Variables, click on Actions,
