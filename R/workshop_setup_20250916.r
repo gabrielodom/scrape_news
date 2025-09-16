@@ -71,3 +71,14 @@ usethis::use_github_action()
 # add an environment variable with:
 # env:
 #   NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+# YAY it worked!!!
+
+
+# Ok, so this code works (runs without errors), but it doesn't **do** anything.
+# Well, it "does" what the script says it should do, but I haven't added an
+# action to save the results. Thus, if I pull after the GitHub Action completes,
+# there are no changes. In order to get the changes to "save" after an Action,
+# the action should make a commit to the repo. Here is an action to do that:
+# - uses: stefanzweifel/git-auto-commit-action@v5
+# Let's try it out
+
